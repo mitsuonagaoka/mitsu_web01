@@ -4,6 +4,8 @@ from pdf2image import convert_from_path
 import pytesseract
 import os
 
+# pip show pdf2image'pdf2image'があれば、モジュールの情報が表示されます。/なければ、Package(s) not found: pdf2image
+
 def invoice_show44():
     # PDFファイルのディレクトリパス
     pdf_directory = r"C:\Users\marom\Invoice"
