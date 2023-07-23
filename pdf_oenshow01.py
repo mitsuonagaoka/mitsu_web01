@@ -1,27 +1,8 @@
-# import sqlite3
-# import pandas as pd
-# import streamlit as st
-# from PIL import Image
-# import datetime
-# from datetime import date
-
-# from reportlab.pdfgen import canvas
-# from reportlab.lib.pagesizes import portrait, A4
-# from reportlab.lib.utils import ImageReader
-# from reportlab.pdfbase import pdfmetrics
-# from reportlab.pdfbase.cidfonts import UnicodeCIDFont
-# from contextlib import closing
-# import plotly.express as px
-# import base64
-# import qrcode
-
 import streamlit as st
 from pdf2image import convert_from_path
-from reportlab.pdfbase.ttfonts import TTFont
+# from reportlab.pdfbase.ttfonts import TTFont
 import pytesseract
 import os
-
-# streamlit run pdf_oenshow01.py
 
 def invoice_show44():
     # PDFファイルのディレクトリパス
@@ -49,3 +30,6 @@ def invoice_show44():
 if st.button('PDF表示'):
     st.title('PDF表示')
     invoice_show44()
+
+
+# streamlit run pdf_oenshow01.py
