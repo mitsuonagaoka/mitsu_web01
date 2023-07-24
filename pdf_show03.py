@@ -1,20 +1,30 @@
 import streamlit as st
-import base64
+import pdfplumber
+from io import BytesIO
+from PIL import Image
 
-def invoice_show44():
+def pdf_to_image(pdf_file):
+    images = []
+    with pdfplumber.open(pdf_file) as pdf:
+        for page in pdf.pages:
+            img = page.to_image(resolution=150)
+            images.append(img)
+
+    return images
+
+def main():
     st.title("PDF Viewer")
     pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 
     if pdf_file is not None:
-        # PDFファイルをBase64エンコードしてHTMLタグに埋め込む
-        pdf_base64 = base64.b64encode(pdf_file.read()).decode("utf-8")
-        pdf_embed = f'<embed src="data:application/pdf;base64,{pdf_base64}" width="100%" height="600px" type="application/pdf">'
-        st.markdown(pdf_embed, unsafe_allow_html=True)
+        images = pdf_to_image(pdf_file)
+        for img in images:
+            st.image(img)
 
-invoice_show44()
+if __name__ == "__main__":
+    main()
 
-# if __name__ == "__main__":
-#     main()
 
+# invoice_show44()
 
 # streamlit run pdf_show03.py
