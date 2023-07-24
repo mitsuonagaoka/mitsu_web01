@@ -19,6 +19,3 @@ def invoice_show44():
 
         # 一時的なファイルを削除
         os.remove("temp.pdf")
-
-
-# streamlit run pdf_oenshow01.py
