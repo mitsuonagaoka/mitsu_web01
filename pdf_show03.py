@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 
-def main():
+def invoice_show44():
     st.title("PDF Viewer")
     pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 
@@ -11,8 +11,10 @@ def main():
         pdf_embed = f'<embed src="data:application/pdf;base64,{pdf_base64}" width="100%" height="600px" type="application/pdf">'
         st.markdown(pdf_embed, unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    main()
+invoice_show44()
+
+# if __name__ == "__main__":
+#     main()
 
 
-# streamlit run pdf_show02.py
+# streamlit run pdf_show03.py
