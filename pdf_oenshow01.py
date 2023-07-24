@@ -23,4 +23,4 @@ def invoice_show44():
 invoice_show44()
 
 # streamlit run pdf_oenshow01.py
-# requirements.txt 依存関係をインストールします
+# streamlit run pdf_oenshow01.py
