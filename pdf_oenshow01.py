@@ -20,6 +20,8 @@ def invoice_show44():
         # 一時的なファイルを削除
         os.remove("temp.pdf")
 
+        st.run(port=8502)  # ポート番号を8502に変更
+
 invoice_show44()
 
 # streamlit run pdf_oenshow01.py
