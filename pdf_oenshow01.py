@@ -4,6 +4,8 @@ from PIL import Image
 import tempfile
 import os
 
+# pip install pymupdf　を実行
+
 def pdf_to_images(file_path):
     images = []
     with fitz.open(file_path) as pdf_document:
