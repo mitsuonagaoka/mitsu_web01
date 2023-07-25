@@ -38,11 +38,6 @@ def invoice_show44():
         # 一時ファイルを削除
         os.remove(temp_file_path)
 
-
 invoice_show44()
-
-# if __name__ == "__main__":
-#     main()
-
 
 # streamlit run pdf_show02.py
