@@ -1,20 +1,17 @@
 import streamlit as st
-import fitz  # PyMuPDFをインポート
-from PIL import Image
+import pdfplumber
+import pandas as pd
 import tempfile
 import os
 
-def pdf_to_images(file_path):
-    images = []
-    with fitz.open(file_path) as pdf_document:
-        for page_num in range(pdf_document.page_count):
-            page = pdf_document.load_page(page_num)
-            pixmap = page.get_pixmap()
-            img = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
-            images.append(img)
-    return images
+def read_pdf(file_path):
+    with pdfplumber.open(file_path) as pdf:
+        text = ""
+        for page in pdf.pages:
+            text += page.extract_text()
+        return text
 
-def invoice_show44():
+def main():
     st.title("PDFファイルビューア")
 
     uploaded_file = st.file_uploader("PDFファイルをアップロードしてください", type=["pdf"])
@@ -28,16 +25,24 @@ def invoice_show44():
         file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
         st.write(file_details)
 
-        # PDFを画像に変換
-        images = pdf_to_images(temp_file_path)
+        # PDFファイルの内容を表示
+        text = read_pdf(temp_file_path)
 
-        # 画像を表示
-        for image in images:
-            st.image(image, use_column_width=True)
+        # テキストをDataFrameとして処理
+        data = {"PDF Text": [text]}
+        df = pd.DataFrame(data)
+
+        # 罫線付きのテーブルとしてDataFrameを表示
+        st.dataframe(df, height=600)
 
         # 一時ファイルを削除
         os.remove(temp_file_path)
 
-invoice_show44()
+if __name__ == "__main__":
+    main()
+
+
+
+# invoice_show44()
 
 # streamlit run pdf_show02.py
