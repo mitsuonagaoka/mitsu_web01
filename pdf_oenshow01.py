@@ -5,6 +5,7 @@ import tempfile
 import os
 
 # pip install pymupdf　を実行
+# pip install PyMuPDF==1.18.14　を実行
 
 def pdf_to_images(file_path):
     images = []
