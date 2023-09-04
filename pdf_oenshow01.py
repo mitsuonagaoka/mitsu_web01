@@ -10,7 +10,6 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import portrait, A4
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
-# from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from contextlib import closing
 import plotly.express as px
 import base64
@@ -22,6 +21,8 @@ import os
 
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+
+import requests
 
 
 # データベースに接続 product30
