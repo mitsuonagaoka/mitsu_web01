@@ -25,7 +25,7 @@ from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 import requests
 
 
-# データベースに接続 product30
+# データベースに接続 product30 product30
 db_name = './data/product30.db'
 conn = sqlite3.connect(db_name)
 c = conn.cursor()
