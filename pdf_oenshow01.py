@@ -21,20 +21,10 @@ import pytesseract
 import os
 
 from reportlab.pdfbase import pdfmetrics
-# from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 
-# pdfmetrics.registerFont(TTFont('MSGothic', 'C:\\Windows\\Fonts\\MSGothic.ttc'))
 
-# フォントを登録 KozMinPro Regular.otf MS Gothic
-# pdfmetrics.registerFont(UnicodeCIDFont('KozMinPro-Regular', 'C:/Windows/Fonts/KozMinPro-Regular.otf'))
-# pdfmetrics.registerFont(TTFont('KozMinPro-Regular', 'C:/Windows/Fonts/msgothic.ttc'))
-
-
-
-
-
-# データベースに接続
+# データベースに接続 product30
 db_name = './data/product30.db'
 conn = sqlite3.connect(db_name)
 c = conn.cursor()
