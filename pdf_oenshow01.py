@@ -4,8 +4,6 @@ from PIL import Image
 import tempfile
 import os
 
-# pip install pymupdf　を実行
-# pip install PyMuPDF==1.18.14　を実行
 
 def pdf_to_images(file_path):
     images = []
@@ -28,8 +26,9 @@ def invoice_show44():
             temp_file.write(uploaded_file.read())
             temp_file_path = temp_file.name
 
-        file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
-        st.write(file_details)
+        # ファイル詳細を表示する
+        # file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
+        # st.write(file_details)
 
         # PDFを画像に変換
         images = pdf_to_images(temp_file_path)
