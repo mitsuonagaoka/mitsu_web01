@@ -1,22 +1,6 @@
 streamlit
-PyMuPDF
-Pillow
-
-sqlite3
 pandas
-
-datetime
 reportlab
-contextlib
-plotly
-base64
-qrcode
-pdf2image
-pytesseract
-
-requests
-
-
 
 
 
